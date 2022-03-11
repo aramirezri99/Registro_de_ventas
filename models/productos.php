@@ -1,55 +1,59 @@
 <?php
 
+class producto
+{
+    private $IdProducto;
+    private $nombre;
+    private $precio;
 
-class producto{
+    private $db;
 
-  private $IdProducto;
-  private $nombre;
-  private $precio;
+    public function __construct()
+    {
+        $this->db = Database::connect();
+    }
 
-  private $db;
-  
-   public function __construct() {
+    function getIdProducto()
+    {
+        return $this->IdProducto;
+    }
 
-    $this->db = Database::connect();
+    function setIdProducto($id)
+    {
+        $this->IdProducto = $id;
+    }
 
-  }
+    function getname_producto()
+    {
+        return $this->name;
+    }
 
-   function getIdProducto(){
-    return $this->IdProducto;
-  }
+    function setname_producto($nombre)
+    {
+        $this->nombre = $nombre;
+    }
 
-  function setIdProducto($id){
-    $this->IdProducto = $id;
-  }
+    function getprecio()
+    {
+        return $this->precio;
+    }
 
-  function getname_producto(){
-    return $this->name;
-  }
+    function setprecio($precio)
+    {
+        $this->precio = $precio;
+    }
 
-  function setname_producto($nombre){
-    $this->nombre = $nombre;
-  }
+    public function allproducts()
+    {
+        $all = $this->db->query('SELECT * FROM producto');
+        return $all;
+    }
 
-  function getprecio(){
-    return $this->precio;
-  }
-
-  function setprecio($precio){
-    $this->precio = $precio;
-  }
-
-  
-  public function allproducts(){
-
-    $all = $this->db->query("SELECT * FROM producto");
-		return $all;
-  }
-
-  public function search_precio(){
-
-    $all = $this->db->query("SELECT precio FROM producto WHERE IdProducto = {$this->getIdProducto()}");
-		return $all;
-  }
-
+    public function search_precio()
+    {
+        $all = $this->db->query(
+            "SELECT precio FROM producto WHERE IdProducto = {$this->getIdProducto()}"
+        );
+        return $all;
+    }
 }

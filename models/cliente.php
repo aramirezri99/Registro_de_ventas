@@ -1,49 +1,51 @@
 <?php
 
-class cliente{
+class cliente
+{
+    private $IdCliente;
+    private $Ruc;
+    private $RazonSocial;
 
-  private $IdCliente;
-  private $Ruc;
-  private $RazonSocial;
+    private $db;
 
-  private $db;
+    public function __construct()
+    {
+        $this->db = Database::connect();
+    }
 
-  public function __construct() {
+    function getIdCliente()
+    {
+        return $this->IdCliente;
+    }
 
-    $this->db = Database::connect();
+    function setIdCliente($id)
+    {
+        $this->IdCliente = $id;
+    }
 
-  }
+    function getRuc()
+    {
+        return $this->Ruc;
+    }
 
-  function getIdCliente(){
-    return $this->IdCliente;
-  }
+    function setIRuc($ruc)
+    {
+        $this->Ruc = $ruc;
+    }
 
-  function setIdCliente($id){
-    $this->IdCliente = $id;
-  }
+    function getRazonSocial()
+    {
+        return $this->RazonSocial;
+    }
 
-  function getRuc(){
-    return $this->Ruc;
-  }
+    function setRazonSocial($razon)
+    {
+        $this->RazonSocial = $razon;
+    }
 
-  function setIRuc($ruc){
-    $this->Ruc = $ruc;
-  }
-
-  function getRazonSocial(){
-    return $this->RazonSocial;
-  }
-
-  function setRazonSocial($razon){
-    $this->RazonSocial = $razon;
-  }
-
-
-  public function all_clientes(){
-
-    $all = $this->db->query("SELECT * FROM cliente");
-		return $all;
-  }
+    public function all_clientes()
+    {
+        $all = $this->db->query('SELECT * FROM cliente');
+        return $all;
+    }
 }
-
-
