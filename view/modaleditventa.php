@@ -14,7 +14,7 @@
 
                 <div class="modal-body">
 
-                    <div class="form-group">
+                    <div class="form-group" hidden>
                         <label for="exampleInputEmail1">Id Venta</label>
                         <input type="number" class="form-control" id="idventa-medit" name="txtcantidad"
                             aria-describedby="emailHelp">

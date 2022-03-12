@@ -31,13 +31,13 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Precio</label>
                         <input type="number" class="form-control" id="txtprecio" name="txtprecio"
-                            aria-describedby="emailHelp">
+                            aria-describedby="emailHelp" disabled>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Sub Total</label>
                         <input type="number" class="form-control" id="txtsubtotal" name="txtsubtotal"
-                            aria-describedby="emailHelp">
+                            aria-describedby="emailHelp" disabled>
                     </div>
 
 

@@ -1,17 +1,11 @@
 <?php
 session_start();
-
 require 'config/parametros.php';
 require 'database/conecction.php';
 require_once 'autoload.php';
 
 /*si no existe controlodor siempre muestra
  el index*/
-
-if (isset($_SESSION['user'])) {
-    header('Location: http://localhost/proyect-venta/login/mostrar_login');
-    exit();
-}
 
 if (!isset($_GET['controller'])) {
     $default_controlador = controller_default;

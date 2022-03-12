@@ -88,11 +88,6 @@ FROM detalle_venta WHERE IdDetalleVenta={$this->getIdDetalleVenta()};");
         return $all;
     }
 
-    //obtener un detalle por id
-    public function get_detall_toid()
-    {
-    }
-
     //insertar
     public function save_detall()
     {

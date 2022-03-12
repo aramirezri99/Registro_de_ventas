@@ -146,8 +146,7 @@ class Venta
         $all = $this->db->query(
             'SELECT IdVenta FROM venta ORDER BY IdVenta DESC LIMIT 1;'
         );
-        if ($all) {
-            return true;
-        }
+
+        return $all;
     }
 }

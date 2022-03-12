@@ -1,6 +1,28 @@
 <?php
 require 'header/header.php'; ?>
 <div class="container">
+
+
+
+    <?php if (!isset($_SESSION['user'])) { ?>
+    <form id="form-login" action="http://localhost/proyect-venta/login/validar" method="POST">
+        <h1>Logueate</h1>
+
+        <div class="mb-3 col-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="number" class="form-control" id="documento" name="documento" aria-describedby="emailHelp">
+
+        </div>
+        <div class="mb-3 col-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="contraseña" name="pass">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Acceder</button>
+    </form>
+    <?php } ?>
+
+    <?php if (isset($_SESSION['user'])) { ?>
     <h1>Registro de Venta</h1>
     <br>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -57,7 +79,7 @@ require 'header/header.php'; ?>
                     <div class="form-group col">
                         <label for="exampleInputEmail1">Total</label>
                         <input type="number" class="form-control" id="txttotal" name="txttotal"
-                            aria-describedby="emailHelp">
+                            aria-describedby="emailHelp" disabled>
                     </div>
                     <div class="form-group col " hidden>
                         <label for="exampleInputEmail1">Usuario</label>
@@ -118,15 +140,22 @@ require 'header/header.php'; ?>
             </div>
         </div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
+        <a href="http://localhost/proyect-venta/login/logout" class="btn btn-danger btn-sm"> Cerrar </a>
     </div>
+    <?php } ?>
+
+
+
+
+
 
 
 
     <?php
-  require 'view/modal_detalle.php';
-  require 'view/modaleditventa.php';
-  require 'view/delete_modal_venta.php';
-  require 'header/pie.php';
+    require 'view/modal_detalle.php';
+    require 'view/modaleditventa.php';
+    require 'view/delete_modal_venta.php';
+    require 'header/pie.php';
 
 
 ?>
